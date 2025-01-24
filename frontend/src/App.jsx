@@ -23,7 +23,7 @@ const App = () => {
   const submitHanler = (e) => {
     e.preventDefault();
     // console.log(values.email)
-    axios.post('http://localhost:7100/register', values)
+    axios.post('https://react-mysql-mn67.vercel.app/register', values)
       .then(result => console.log(result))
       .catch(err => console.log(err))
   }
@@ -33,7 +33,7 @@ const App = () => {
     e.preventDefault();
     // console.log(values.email)
 
-    axios.put('http://localhost:7100/update/' + number, values)
+    axios.put('https://react-mysql-mn67.vercel.app/update/' + number, values)
       .then(result => console.log(result))
       .catch(err => console.log(err))
   }
@@ -42,7 +42,7 @@ const App = () => {
 
 
   const displayData = () => {
-    axios.get('http://localhost:7100/display')
+    axios.get('https://react-mysql-mn67.vercel.app/display')
       .then(res => {
         console.log(res);
         setData(res.data);
@@ -74,7 +74,7 @@ const App = () => {
   const deleteRecord = (x) => {
     setNumber(x);
     console.log("will delete this id=" + x)
-    axios.delete('http://localhost:7100/delete/' + x)
+    axios.delete('https://react-mysql-mn67.vercel.app/delete/' + x)
       .then(result => console.log("delete ho gaya"))
       .catch(err => console.log("error aa gayi"))
 
