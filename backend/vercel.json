@@ -6,5 +6,9 @@
   "routes": [
     { "src" : "/(.*)", "dest" : "server.js"}
   ]
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> 100428fea19bebcb0864efce6033e604b6642de8

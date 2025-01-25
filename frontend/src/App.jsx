@@ -17,10 +17,14 @@ const App = () => {
   const [data, setData] = useState([])
 
 
+<<<<<<< HEAD
   // const baseUrl = "https://mysqldb9.vercel.app";
 
   const baseUrl = "http://localhost:3000";
 
+=======
+  const baseUrl = "https://mysqldb9.vercel.app";
+>>>>>>> 100428fea19bebcb0864efce6033e604b6642de8
 
   const [values, setValues] = useState([{
     email: "",
