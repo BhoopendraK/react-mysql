@@ -15,7 +15,7 @@ const PORT = process.env.PORT || PORT
 
 app.use(cors(
   {
-    // origin: "https://react-mysql-93tt.vercel.app",
+    origin: "https://react-mysql-chi.vercel.app/",
     // origin: "http://localhost:5173",
     origin:"*",
     // CORS_ORIGIN : "*",
