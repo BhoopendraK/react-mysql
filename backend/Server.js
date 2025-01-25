@@ -110,8 +110,9 @@ app.delete("/delete/:id", (req, res)=>{
   try{
 
   // app.use("/auth", routes);
+  // app.listen(3000, ()=>{console.log(`Nodemon Server Started at PORT =  ${PORT}`)})
   
-  app.listen(PORT, ()=>{console.log(`Nodemon Server Started at PORT =  ${PORT}`)})
+  app.listen(3000, ()=>{console.log(`Nodemon Server Started at PORT = 3000`)})
   }catch(e){
   console.log("ERROR: Network Error")
   }
