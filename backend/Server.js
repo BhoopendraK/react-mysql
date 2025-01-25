@@ -20,6 +20,10 @@ app.use((req, res, next) => {
 })
 
 
+
+
+
+
 app.use(cors(
   {
     // origin: "http://localhost:5173",
@@ -27,7 +31,7 @@ app.use(cors(
     // origin:"*",
     // CORS_ORIGIN : "*",
   } 
-  ))
+  ));
   app.use(express.json())
 
   
@@ -96,8 +100,13 @@ app.delete("/delete/:id", (req, res)=>{
   try{
 
   // app.use("/auth", routes);
-  
-  app.listen(PORT, ()=>{console.log(`Nodemon Server Started at PORT =  ${PORT}`)})
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
+    
+  // app.listen(PORT, ()=>{console.log(`Nodemon Server Started at PORT =  ${PORT}`)})
   }catch(e){
   console.log("Network Error")
   }
