@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+// import "dotenv".config()
 
 import axios from 'axios'
+
+
 
 const App = () => {
   const [flag, setFlag] = useState(false);
@@ -13,6 +16,12 @@ const App = () => {
   const [password, setPassword] = useState()
   const [data, setData] = useState([])
 
+
+  // const baseUrl = "https://mysqldb9.vercel.app";
+
+  const baseUrl = "http://localhost:3000";
+
+
   const [values, setValues] = useState([{
     email: "",
     password: ""
@@ -23,7 +32,7 @@ const App = () => {
   const submitHanler = (e) => {
     e.preventDefault();
     // console.log(values.email)
-    axios.post('http://localhost:7100/register', values)
+    axios.post(`${baseUrl}/register`, values)
       .then(result => console.log(result))
       .catch(err => console.log(err))
   }
@@ -33,7 +42,7 @@ const App = () => {
     e.preventDefault();
     // console.log(values.email)
 
-    axios.put('http://localhost:7100/update/' + number, values)
+    axios.put(`${baseUrl}/update/` + number, values)
       .then(result => console.log(result))
       .catch(err => console.log(err))
   }
@@ -42,7 +51,7 @@ const App = () => {
 
 
   const displayData = () => {
-    axios.get('http://localhost:7100/display')
+    axios.get(`${baseUrl}/display`)
       .then(res => {
         console.log(res);
         setData(res.data);
@@ -74,7 +83,7 @@ const App = () => {
   const deleteRecord = (x) => {
     setNumber(x);
     console.log("will delete this id=" + x)
-    axios.delete('http://localhost:7100/delete/' + x)
+    axios.delete(`${baseUrl}/delete/` + x)
       .then(result => console.log("delete ho gaya"))
       .catch(err => console.log("error aa gayi"))
 
