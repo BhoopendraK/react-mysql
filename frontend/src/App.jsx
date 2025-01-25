@@ -14,7 +14,7 @@ const App = () => {
   const [data, setData] = useState([])
 
 
-  const baseUrl = "https://react-mysql-mn67-7x1r22pj2-bhoopendraks-projects.vercel.app";
+  const baseUrl = "react-mysql-mn67.vercel.app";
 
   const [values, setValues] = useState([{
     email: "",
