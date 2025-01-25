@@ -57,6 +57,11 @@ con.connect(function(err){
 })
 
 
+
+app.get('/displays', (req, res) => {
+  res.send('This is the displays endpoint');
+});
+
 app.get("/display", (req, res)=>{
   const sql="SELECT * FROM admin";
   con.query(sql, (err, data)=>{
