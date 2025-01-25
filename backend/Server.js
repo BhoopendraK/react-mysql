@@ -13,44 +13,44 @@ const cors = require("cors")
 const app=express();
 const PORT = process.env.PORT || PORT
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://react-mysql-93tt.vercel.app');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-})
-
-
-
-
-
-
 app.use(cors(
   {
+    // origin: "https://react-mysql-93tt.vercel.app",
     // origin: "http://localhost:5173",
-    origin: "https://react-mysql-93tt.vercel.app";
-    header('Access-Control-Allow-Origin': 'https://react-mysql-93tt.vercel.app');
-    header('Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept');
-    header('Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE');
-
-    // origin:"*",
+    origin:"*",
     // CORS_ORIGIN : "*",
+    // Access-Control-Allow-Origin: *,
+    // Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE
+    // header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X- 
+    // Request-With');
+
+
+//     header(Access-Control-Allow-Origin:http://127.0.0.1:3000),
+// "Access-Control-Allow-Methods": POST, GET, UPDATE, DELETE,
+// "Access-Control-Allow-Headers": Content-Type, Authorization,
+
+    // header('Access-Control-Allow-Origin: *');
+//     header(Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS)
+//     header(Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization)
+
   } 
-  ));
+  ))
   app.use(express.json())
 
-  
+// const urlDB=`mysql://${process.env.DB_USER}: ${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.PORT}/${process.env.DB_DATABASE}`;  
+
+// const con = mydb.createConnection(urlDB);
 
 const con = mydb.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-});
-
+})
 
 con.connect(function(err){
   if(err){
-    console.log("Connection error!")
+    console.log("Connection error!" + err)
   } else{
     console.log("Database `bhoop` Connected...")
   }
@@ -105,13 +105,8 @@ app.delete("/delete/:id", (req, res)=>{
   try{
 
   // app.use("/auth", routes);
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
-
-    
-  // app.listen(PORT, ()=>{console.log(`Nodemon Server Started at PORT =  ${PORT}`)})
+  
+  app.listen(PORT, ()=>{console.log(`Nodemon Server Started at PORT =  ${PORT}`)})
   }catch(e){
-  console.log("Network Error")
+  console.log("ERROR: Network Error")
   }
