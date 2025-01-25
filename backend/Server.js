@@ -27,7 +27,11 @@ app.use((req, res, next) => {
 app.use(cors(
   {
     // origin: "http://localhost:5173",
-    origin: "https://react-mysql-93tt.vercel.app",
+    origin: "https://react-mysql-93tt.vercel.app";
+    header('Access-Control-Allow-Origin': 'https://react-mysql-93tt.vercel.app');
+    header('Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept');
+    header('Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE');
+
     // origin:"*",
     // CORS_ORIGIN : "*",
   } 
