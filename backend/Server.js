@@ -57,6 +57,15 @@ con.connect(function(err){
 })
 
 
+app.get("/", (req, res)=>{
+  res.send({
+    activeStatus: true,
+    error: false,
+  })
+})
+
+
+
 app.get("/display", (req, res)=>{
   const sql="SELECT * FROM admin";
   con.query(sql, (err, data)=>{
